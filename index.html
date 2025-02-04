@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Income & Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="container">
+        
+      <div class="header">
+        <div class="user-info">
+          <h3>inEx Tech</h3>
+          <p>Income & Expense Tracker</p>
+        </div>
+        <div class="header-balance">
+          <p>Net Balance :</p>
+          <span id="headerBalance">₹ 5,000.00</span>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="form">
+          <div class="form-dashboard">
+            <h3>Balance</h3>
+            <h1>₹ 5,000.00</h1>
+            <div class="income-balance">
+              <div class="total-income">
+                <p>Total Income</p>
+                <span id="totalIncome">₹ 5,000.00</span>
+              </div>
+              <div class="total-expense">
+                <p>Total Expense</p>
+                <span id="totalExpense">₹ 5,000.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-entry">
+            <h4>Entry Form</h4>
+
+            <label for="catagory">Catagory :</label>
+            <select id="catagory">
+              <option value="income"></option>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+
+            <label for="amount">Amount :</label>
+            <input type="number" id="amount" />
+
+            <label for="discription">Discription :</label>
+            <input type="text" id="discription" />
+
+            <div class="form-btn">
+              <button class="btn" id="addButton">Add</button>
+              <button class="btn" id="resetButton">Reset</button>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="overview">
+          <div class="filter">
+            <span>Filter :</span>
+            <div class="filter-btns">
+            <input type="radio" id="allFilter" name="filter" value="all" checked>
+            <label for="all-filter">All</label><br>
+            <input type="radio" id="incomeFilter" name="filter" value="income">
+            <label for="income-filter">Income</label><br>
+            <input type="radio" id="expenseFilter" name="filter" value="expense">
+            <label for="expense-filter">Expense</label>
+            <button class="apply-filter-btn" id="applyFilterBtn">Apply</button>
+        </div>
+          </div>
+          <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Income</th>
+                        <th>Expense</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="">
+                    <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>500</td>
+                    <td>For Petrol</td>
+                    <td>04/02/2025</td>
+                    <td><Button>X</Button></td>
+                    </tr>
+                    <tr>
+                    <td>1</td>
+                    <td>100000</td>
+                    <td>0</td>
+                    <td>Salary</td>
+                    <td>04/02/2025</td>
+                    <td><Button>X</Button></td>
+                    </tr>
+                 </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="script.js"></script>
+</html>

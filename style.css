@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --body-color: #f9f6e6;
+  --bg-color: #fffdf0;
+  --text-color: #070f2b;
+  --dark-red: #b8001f;
+  --orange: #eb8317;
+  --yellow: #f3c623;
+  --dark-blue: #000957;
+  --light-blue: #332fd0;
+  --dark-green: #059212;
+  --green: #03c988;
+  --white: #ffffff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--body-color);
+  font-family: "Poppins", serif;
+  padding: 1em 1.5em;
+  color: var(--text-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-color);
+  padding: 1em 3em;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px #888888;
+}
+
+.user-info h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.user-info p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.header-balance {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  margin-right: 3em;
+}
+
+.header-balance p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+#headerBalance {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.main {
+  display: flex;
+}
+
+.form {
+  width: 40%;
+}
+
+.form-dashboard {
+  background: var(--bg-color);
+  padding: 2em 3em;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px #888888;
+  margin-top: 1em;
+}
+
+.form-dashboard h3 {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.form-dashboard h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.75em;
+}
+
+.income-balance {
+  display: flex;
+  gap: 2em;
+}
+
+.total-income {
+  background-color: var(--dark-green);
+  border-radius: 10px;
+  padding: 1em;
+  color: var(--white);
+}
+
+.total-income p {
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+
+#totalIncome {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.total-expense {
+  background-color: var(--dark-red);
+  border-radius: 10px;
+  padding: 1em;
+  color: var(--white);
+}
+
+.total-expense p {
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+
+#totalExpense {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.form-entry {
+  background: var(--bg-color);
+  padding: 2em 3em;
+  border-radius: 20px;
+  margin-top: 1em;
+  box-shadow: 1px 1px 10px #888888;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.form-entry h4 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.form-entry input {
+  background-color: var(--white);
+  border: 1px solid var(--text-color);
+  border-radius: 8px;
+  padding: 0.4em;
+  font-size: 1rem;
+  outline: none;
+  margin-bottom: 1.25em;
+}
+.form-entry select {
+  background-color: var(--white);
+  border: 1px solid var(--text-color);
+  border-radius: 8px;
+  padding: 0.4em;
+  font-size: 1rem;
+  outline: none;
+  margin-bottom: 1.25em;
+}
+.form-btn {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+.btn {
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 35px;
+}
+
+#addButton {
+  padding: 0.5em 2em;
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+#resetButton {
+  padding: 0.5em 1.6em;
+  background-color: var(--light-blue);
+  color: var(--white);
+}
+
+.overview {
+  background: var(--bg-color);
+  padding: 2em 3em;
+  border-radius: 20px;
+  margin-top: 1em;
+  margin-left: 1em;
+  box-shadow: 1px 1px 10px #888888;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.filter span {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.filter-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.apply-filter-btn {
+  font-size: 1rem;
+  border: none;
+  border-radius: 35px;
+  padding: 0.4em 1em;
+  background-color: var(--light-blue);
+  color: var(--white);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: rgb(232, 84, 114);
+  color: #fff;
+  font-weight: 500;
+}
+
+tbody {
+  background-color: var(--white);
+}
