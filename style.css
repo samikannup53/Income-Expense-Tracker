@@ -4,7 +4,7 @@
   --body-color: #f9f6e6;
   --bg-color: #fffdf0;
   --text-color: #070f2b;
-  --dark-red: #b8001f;
+  --dark-red: #fb4141;
   --orange: #eb8317;
   --yellow: #f3c623;
   --dark-blue: #000957;
@@ -23,6 +23,7 @@ body {
   font-family: "Poppins", serif;
   padding: 1em 1.5em;
   color: var(--text-color);
+  user-select: none;
 }
 
 .header {
@@ -228,6 +229,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1em;
+  scrole-y: true;
 }
 th,
 td {
@@ -244,4 +246,31 @@ th {
 
 tbody {
   background-color: var(--white);
+}
+
+.action-cta {
+  display: flex;
+  gap: 0.8em;
+  justify-content: center;
+  padding: 0.25em;
+}
+
+#deleteBtn {
+  border: none;
+  background-color: transparent;
+}
+
+#deleteBtn i {
+  color: var(--dark-red);
+  font-size: 1.25rem;
+}
+
+#editBtn {
+  border: none;
+  background-color: transparent;
+}
+
+#editBtn i {
+  color: blue;
+  font-size: 1.2rem;
 }

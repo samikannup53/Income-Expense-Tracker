@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Income & Expense Tracker</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </head>
   <body>
     <section class="container">
@@ -39,18 +40,18 @@
           <div class="form-entry">
             <h4>Entry Form</h4>
 
-            <label for="catagory">Catagory :</label>
-            <select id="catagory">
-              <option value="income"></option>
+            <label for="catagoryInput">Catagory :</label>
+            <select id="catagoryInput">
+              <option value=""></option>
               <option value="income">Income</option>
               <option value="expense">Expense</option>
             </select>
 
-            <label for="amount">Amount :</label>
-            <input type="number" id="amount" />
+            <label for="amountInput">Amount :</label>
+            <input type="number" id="amountInput" />
 
-            <label for="discription">Discription :</label>
-            <input type="text" id="discription" />
+            <label for="discriptionInput">Discription :</label>
+            <input type="text" id="discriptionInput" />
 
             <div class="form-btn">
               <button class="btn" id="addButton">Add</button>
@@ -65,15 +66,15 @@
             <span>Filter :</span>
             <div class="filter-btns">
             <input type="radio" id="allFilter" name="filter" value="all" checked>
-            <label for="all-filter">All</label><br>
+            <label for="allFilter">All</label><br>
             <input type="radio" id="incomeFilter" name="filter" value="income">
-            <label for="income-filter">Income</label><br>
+            <label for="incomeFilter">Income</label><br>
             <input type="radio" id="expenseFilter" name="filter" value="expense">
-            <label for="expense-filter">Expense</label>
+            <label for="expenseFilter">Expense</label>
             <button class="apply-filter-btn" id="applyFilterBtn">Apply</button>
         </div>
           </div>
-          <div class="table">
+          <div class="data-table">
             <table>
                 <thead>
                     <tr>
@@ -85,24 +86,21 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody id="">
-                    <tr>
+                <tbody id="transactionData">
+                  <tr>
                     <td>1</td>
                     <td>0</td>
                     <td>500</td>
                     <td>For Petrol</td>
                     <td>04/02/2025</td>
-                    <td><Button>X</Button></td>
-                    </tr>
-                    <tr>
-                    <td>1</td>
-                    <td>100000</td>
-                    <td>0</td>
-                    <td>Salary</td>
-                    <td>04/02/2025</td>
-                    <td><Button>X</Button></td>
-                    </tr>
-                 </tbody>
+                    <td>
+                      <div class="action-cta">
+                        <button id="deleteBtn"><i class="bi bi-trash3-fill"></i></Button>
+                        <button id="editBtn"><i class="bi bi-pencil-square"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
             </table>
           </div>
         </div>
