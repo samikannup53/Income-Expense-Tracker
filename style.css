@@ -140,6 +140,22 @@ body {
   gap: 0.5em;
 }
 
+.date-catagory {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.catagory{
+  display:flex;
+  flex-direction:column;
+}
+
+.date{
+  display:flex;
+  flex-direction:column;
+}
+
 .form-entry h4 {
   text-align: center;
   font-size: 1.25rem;
@@ -149,16 +165,23 @@ body {
   background-color: var(--white);
   border: 1px solid var(--text-color);
   border-radius: 8px;
-  padding: 0.4em;
+  padding: 0.5em 1em;
   font-size: 1rem;
   outline: none;
   margin-bottom: 1.25em;
 }
+
+.form-entry input[type="date"] {
+  text-transform: uppercase;
+  font-family: "Poppins", serif;
+  font-size: 0.85rem;
+}
+
 .form-entry select {
   background-color: var(--white);
   border: 1px solid var(--text-color);
   border-radius: 8px;
-  padding: 0.4em;
+  padding: 0.5em 1em;
   font-size: 1rem;
   outline: none;
   margin-bottom: 1.25em;

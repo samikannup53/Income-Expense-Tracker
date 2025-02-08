@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Income & Expense Tracker</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
   </head>
   <body>
     <section class="container">
-        
       <div class="header">
         <div class="user-info">
           <h3>inEx Tech</h3>
@@ -17,7 +19,7 @@
         </div>
         <div class="header-balance">
           <p>Net Balance :</p>
-          <span id="headerBalance">₹ 5,000.00</span>
+          <span id="headerBalance">₹ 0.00</span>
         </div>
       </div>
 
@@ -25,28 +27,36 @@
         <div class="form">
           <div class="form-dashboard">
             <h3>Balance</h3>
-            <h1>₹ 5,000.00</h1>
+            <h1 id="formDashboardBalance">₹ 0.00</h1>
             <div class="income-balance">
               <div class="total-income">
                 <p>Total Income</p>
-                <span id="totalIncome">₹ 5,000.00</span>
+                <span id="totalIncomeDisplay">₹ 0.00</span>
               </div>
               <div class="total-expense">
                 <p>Total Expense</p>
-                <span id="totalExpense">₹ 5,000.00</span>
+                <span id="totalExpenseDisplay">₹ 0.00</span>
               </div>
             </div>
           </div>
-          <div class="form-entry">
-            
-            <h4>Entry Form</h4>
 
-            <label for="catagoryInput">Catagory :</label>
-            <select id="catagoryInput">
-              <option value=""></option>
-              <option value="income">Income</option>
-              <option value="expense">Expense</option>
-            </select>
+          <div class="form-entry">
+            <h4>Entry Form</h4>
+            <div class="date-catagory">
+              <div class="catagory">
+              <label for="catagoryInput">Catagory :</label>
+              <select id="catagoryInput">
+                <option value=""></option>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+              </select>
+              </div>
+
+              <div class="date">
+              <label for="dateInput"> Date :</label>
+              <input type="date" id="dateInput" />
+              </div>
+            </div>
 
             <label for="amountInput">Amount :</label>
             <input type="number" id="amountInput" />
@@ -58,7 +68,6 @@
               <button class="btn" id="addButton">Add</button>
               <button class="btn" id="resetButton">Reset</button>
             </div>
-            
           </div>
         </div>
 
@@ -66,42 +75,65 @@
           <div class="filter">
             <span>Filter :</span>
             <div class="filter-btns">
-            <input type="radio" id="allFilter" name="filter" value="all" checked>
-            <label for="allFilter">All</label><br>
-            <input type="radio" id="incomeFilter" name="filter" value="income">
-            <label for="incomeFilter">Income</label><br>
-            <input type="radio" id="expenseFilter" name="filter" value="expense">
-            <label for="expenseFilter">Expense</label>
-            <button class="apply-filter-btn" id="applyFilterBtn">Apply</button>
-        </div>
+              <input
+                type="radio"
+                id="allFilter"
+                name="filter"
+                value="all"
+                checked
+              />
+              <label for="allFilter">All</label><br />
+              <input
+                type="radio"
+                id="incomeFilter"
+                name="filter"
+                value="income"
+              />
+              <label for="incomeFilter">Income</label><br />
+              <input
+                type="radio"
+                id="expenseFilter"
+                name="filter"
+                value="expense"
+              />
+              <label for="expenseFilter">Expense</label>
+              <button class="apply-filter-btn" id="applyFilterBtn">
+                Apply
+              </button>
+            </div>
           </div>
+
           <div class="data-table">
             <table>
-                <thead>
-                    <tr>
-                        <th>S.No</th>
-                        <th>Income</th>
-                        <th>Expense</th>
-                        <th>Description</th>
-                        <th>Date</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="transactionData">
-                  <tr>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>500</td>
-                    <td>For Petrol</td>
-                    <td>04/02/2025</td>
-                    <td>
-                      <div class="action-cta">
-                        <button id="deleteBtn"><i class="bi bi-trash3-fill"></i></Button>
-                        <button id="editBtn"><i class="bi bi-pencil-square"></i></button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Income</th>
+                  <th>Expense</th>
+                  <th>Description</th>
+                  <th>Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="transactionData">
+                <!-- <tr>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>500</td>
+                  <td>For Petrol</td>
+                  <td>04/02/2025</td>
+                  <td>
+                    <div class="action-cta">
+                      <button id="deleteBtn">
+                        <i class="bi bi-trash3-fill"></i>
+                      </button>
+                      <button id="editBtn">
+                        <i class="bi bi-pencil-square"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr> -->
+              </tbody>
             </table>
           </div>
         </div>
