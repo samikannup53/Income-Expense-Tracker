@@ -15,6 +15,9 @@ let totalIncome = 0;
 let totalExpense = 0;
 let netBalance = 0;
 
+let isEditing = false;
+let editIndex = -1;
+
 // Adding Data to Local Storage
 function addData() {
   localStorage.setItem("dataBase", JSON.stringify(dataBase));
@@ -72,8 +75,8 @@ function dataTable(filteredData) {
     cell6 = newRow.insertCell();
     cell6.innerHTML = `
     <div class="action-cta">
-        <button id="deleteBtn"><i class="bi bi-trash3-fill"></i></Button>
-        <button id="editBtn"><i class="bi bi-pencil-square"></i></button>
+        <button id="deleteBtn" onclick = deleteData()><i class="bi bi-trash3-fill"></i></Button>
+        <button id="editBtn" onclick = editData()><i class="bi bi-pencil-square"></i></button>
     </div>`;
   });
 }
@@ -109,6 +112,13 @@ function addTransaction() {
   addData();
   updateTotal();
   resetEntry();
+}
+
+function deleteData(index) {
+  dataBase.splice(index, 1);
+  dataTable(dataBase);
+  addData();
+  updateTotal();
 }
 
 addButton.addEventListener("click", addTransaction);

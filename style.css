@@ -146,14 +146,14 @@ body {
   margin-top: 1em;
 }
 
-.catagory{
-  display:flex;
-  flex-direction:column;
+.catagory {
+  display: flex;
+  flex-direction: column;
 }
 
-.date{
-  display:flex;
-  flex-direction:column;
+.date {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-entry h4 {
@@ -252,8 +252,9 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1em;
-  scrole-y: true;
+  overflow-y: scroll;
 }
+
 th,
 td {
   border: 1px solid black;
@@ -265,6 +266,8 @@ th {
   background-color: rgb(232, 84, 114);
   color: #fff;
   font-weight: 500;
+  position: sticky;
+  top: 0;
 }
 
 tbody {
