@@ -274,6 +274,10 @@ tbody {
   background-color: var(--white);
 }
 
+.table {
+  height: 300px;
+}
+
 .action-cta {
   display: flex;
   gap: 0.8em;
