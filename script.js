@@ -115,19 +115,27 @@ function dataTable(filteredData) {
     let deleteBtn = document.createElement("button");
     let editBtn = document.createElement("button");
 
-    deleteBtn.innerHTML = `<i class="bi bi-trash3-fill"></i>`;
+    deleteBtn.innerHTML = `<i class="fa-solid fa-trash"></i>`;
     deleteBtn.setAttribute("id", "deleteBtn");
 
     // Function to Delete the Transaction
     deleteBtn.addEventListener("click", () => {
       if (confirm("Are You Sure want to Delete the Transaction?")) {
-        dataBase.splice(index, 1);
+        if (
+          confirm(
+            "Once the Data is Deleted, then it will be Recoverd Anymore !"
+          )
+        ) {
+          dataBase.splice(index, 1);
 
-        addData();
-        updateTotal();
-        dataTable(dataBase);
+          addData();
+          updateTotal();
+          dataTable(dataBase);
 
-        setTimeout(deleteAlert, 200);
+          setTimeout(deleteAlert, 200);
+        } else {
+          return;
+        }
       } else {
         return;
       }
@@ -136,7 +144,7 @@ function dataTable(filteredData) {
     cell6.appendChild(deleteBtn);
 
     // Creating Edit Button Inside the Table
-    editBtn.innerHTML = `<i class="bi bi-pencil-square">`;
+    editBtn.innerHTML = `<i class="fa-solid fa-pen-to-square"></i>`;
     editBtn.setAttribute("id", "editBtn");
     editBtn.style.marginLeft = "10px";
 

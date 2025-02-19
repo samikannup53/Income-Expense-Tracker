@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
   </head>
   <body>
     <section class="container">
@@ -17,9 +21,13 @@
           <h3>inEx Tech</h3>
           <p>Income & Expense Tracker</p>
         </div>
-        <div class="header-balance">
-          <p>Net Balance :</p>
-          <span id="headerBalance">₹ 0.00</span>
+        <div class="header-balance-nav">
+          <div class="header-balance">
+            <p>Net Balance :</p>
+            <span id="headerBalance">₹ 0.00</span>
+          </div>
+          <button id="refreshBtn"><i class="fa-solid fa-arrows-rotate"></i></button>
+          <button id="exitBtn">Exit &nbsp;<i class="fa-solid fa-right-from-bracket"></i></button>
         </div>
       </div>
 
@@ -116,6 +124,11 @@
                 </tr>
               </thead>
               <tbody id="transactionData"></tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="6">Footer</td>
+                </tr>
+              </tfoot>
             </table>
           </div>
         </div>
