@@ -10,8 +10,16 @@ and outgoing spending (expenses) and the Users can Edit/Delete the particular tr
 #### Step-2 : Once the Page Load's It Displays Welcome Screen with  Let's Login Button and Info.
 #### Step-3 : Kindly Click Login Button & Once it is Clicked the user will be Navigated to Main Application Page where user can record their Income and Expenses.
 
+## C-R-U-D Operations :
+#### 1. Create: Allow users to Add new Income and Expense Data.
+#### 2. Read: Display the List of Data Dynamically.
+#### 3. Update: Enable users to Edit Existing Data.
+#### 4. Delete: Provide Functionality to Remove Data from the Database.
+
 ## Key Features of the Tracker :
 #### The Application will be provided with 4 Major Parts. They are : 1. Header Section, 2. Mini Dashboard Section, 3. Entry Form Section, 4. Data Overview Section.
+#### Added Local Storage Functionality to Persist Data Across Session.
+
 #### 1 : Header Section:
 It Contains Logo & Tagline, Net Balance - It will show the Current Running Balance and Two Buttons which are Refresh Button to Refresh the Tracker and Exit Btton to Close the Tracker.
 #### 2 : Mini Dashboard Section:
