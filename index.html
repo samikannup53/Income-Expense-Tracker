@@ -15,7 +15,38 @@
     />
   </head>
   <body>
-    <section class="container">
+    <section id="welcome-page">
+      <div class="welcome-page-container">
+        <div class="welcome-info">
+          <h1>
+            Get Started with our financial<span> inEx</span> Tech Software
+          </h1>
+          <p>
+            At inEx Tech Softwares, we believe everyone deserves access to
+            powerful financial tools. Our income and expense tracker puts you in
+            control of your money by providing a simple, comprehensive platform
+            to record your income and expenses.
+          </p>
+        </div>
+        <div class="login-info">
+          <div class="login-wrapper">
+            <h3>Welcome !</h3>
+            <p>Login to Access Powerful Financial Tool</p>
+            <i class="fa-solid fa-fingerprint"></i>
+            <button id="loginBtn">Login</button>
+            <div class="social-icons">
+              <a href=""><i class="bi bi-whatsapp"></i></a>
+              <a href=""><i class="bi bi-twitter"></i></a>
+              <a href=""><i class="bi bi-envelope"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+            </div>
+            <span>copyright @ inEx 2025</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="app">
       <div class="header">
         <div class="user-info">
           <h3>inEx Tech</h3>
@@ -26,8 +57,12 @@
             <p>Net Balance :</p>
             <span id="headerBalance">₹ 0.00</span>
           </div>
-          <button id="refreshBtn"><i class="fa-solid fa-arrows-rotate"></i></button>
-          <button id="exitBtn">Exit &nbsp;<i class="fa-solid fa-right-from-bracket"></i></button>
+          <button id="refreshBtn">
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </button>
+          <button id="exitBtn">
+            Exit &nbsp;<i class="fa-solid fa-right-from-bracket"></i>
+          </button>
         </div>
       </div>
 
@@ -126,7 +161,9 @@
               <tbody id="transactionData"></tbody>
               <tfoot>
                 <tr>
-                  <td colspan="6">Footer</td>
+                  <td class="table-footer" colspan="6">
+                    Total Records : <span id="totalRecords">0</span>
+                  </td>
                 </tr>
               </tfoot>
             </table>

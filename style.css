@@ -1,22 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --body-color: #f9f6e6;
-  --bg-color: #fffdf0;
-  --text-color: #070f2b;
-  --dark-red: #fb4141;
-  --orange: #eb8317;
-  --yellow: #f3c623;
+  --body-color: #1e2022;
+  --bg-color: #212121;
+  --text-color: #ffffff;
+  --dark-red: #ff0000;
+  --orange: #ff6600;
+  --yellow: #f1d00a;
   --dark-blue: #000957;
   --light-blue: #332fd0;
   --dark-green: #059212;
-  --green: #03c988;
+  --green: #06d001;
   --white: #ffffff;
+  --purple: #f5004f;
 }
 
 ::-webkit-scrollbar {
-  width: 0.3vw;
-  height: 0.3vw;
+  width: 0.5vw;
+  height: 0.5vw;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -25,7 +26,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--bg-color);
+  background-color: var(--body-color);
 }
 
 * {
@@ -36,9 +37,172 @@
 body {
   background-color: var(--body-color);
   font-family: "Poppins", serif;
-  padding: 1em;
   color: var(--text-color);
   user-select: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+#welcome-page {
+  padding: 2em;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("assets/bg-image.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+}
+
+.welcome-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.welcome-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-info h1 {
+  color: var(--white);
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 110%;
+  text-align: center;
+}
+
+.welcome-info p {
+  color: var(--yellow);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+.welcome-info span {
+  color: var(--yellow);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.login-info {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  box-shadow: 1px 1px 30px #888888;
+  border-radius: 20px;
+  padding: 1em 0;
+  margin-top: 2.5em;
+}
+
+.login-wrapper h3 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--yellow);
+  margin: 0.5em 0 0.25em 0;
+}
+
+.login-wrapper p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  text-align: center;
+  color: var(--white);
+  width: 70%;
+}
+
+.login-wrapper span {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--white);
+  border-top: 1px solid var(--yellow);
+  margin: 0.5em 0 1em 0;
+  padding: 0.5em;
+}
+
+.fa-fingerprint {
+  font-size: 4rem;
+  color: red;
+  font-weight: 300;
+  margin-top: 0.25em;
+}
+
+#loginBtn {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--bg-color);
+  background-color: var(--yellow);
+  padding: 0.4em 1.2em 0.5em 1.25em;
+  margin: 1em auto;
+  border: none;
+  border-radius: 35px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.5em;
+}
+
+.social-icons i {
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+.social-icons i:hover {
+  color: var(--yellow);
+}
+
+@media screen and (min-width: 480px) {
+  #welcome-page {
+    height: 100vh;
+  }
+  .welcome-page-container {
+    flex-direction: row;
+  }
+
+  .welcome-info {
+    align-items: flex-start;
+    padding: 0 4em;
+  }
+
+  .welcome-info h1 {
+    font-size: 3.5rem;
+    width: 500px;
+    text-align: left;
+  }
+
+  .welcome-info p {
+    width: 450px;
+    text-align: left;
+  }
+
+  .welcome-info span {
+    font-size: 3.75rem;
+  }
+
+  .login-wrapper {
+    margin-top: 0;
+  }
+}
+
+#app {
+  display: none;
+  padding: 1em;
 }
 
 .header {
@@ -367,30 +531,35 @@ table {
 
 th,
 td {
-  border: 1px solid black;
+  border: 1px solid var(--white);
   padding: 0.5em;
   text-align: center;
 }
 
 th {
-  background-color: rgb(232, 84, 114);
-  color: #fff;
+  background-color: var(--purple);
+  color: var(--text-color);
   font-weight: 500;
   position: sticky;
   top: 0;
-  border: 1px solid black;
+  border: 1px solid var(--white);
 }
 
 tfoot {
-  background-color: rgb(232, 84, 114);
+  background-color: var(--purple);
   color: #fff;
   position: sticky;
   bottom: -0.2em;
-  border: 1px solid black;
+  border: 1px solid var(--white);
 }
 
 tbody {
-  background-color: var(--white);
+  background-color: var(--bg-color);
+}
+
+.table-footer {
+  text-align: left;
+  padding-left: 1em;
 }
 
 .action-cta {

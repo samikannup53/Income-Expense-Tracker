@@ -1,4 +1,8 @@
 // Declaring Global Variables
+let loginBtn = document.getElementById("loginBtn");
+let refreshBtn = document.getElementById("refreshBtn");
+let exitBtn = document.getElementById("exitBtn");
+let headerBalance = document.getElementById("headerBalance");
 let catagoryInput = document.getElementById("catagoryInput");
 let amountInput = document.getElementById("amountInput");
 let discriptionInput = document.getElementById("discriptionInput");
@@ -9,7 +13,10 @@ let transactionData = document.getElementById("transactionData");
 let applyFilterBtn = document.getElementById("applyFilterBtn");
 let totalIncomeDisplay = document.getElementById("totalIncomeDisplay");
 let formDashboardBalance = document.getElementById("formDashboardBalance");
-let headerBalance = document.getElementById("headerBalance");
+let totalRecords = document.getElementById("totalRecords");
+
+let app = document.getElementById("app");
+let welcomePage = document.getElementById("welcome-page");
 
 let dataBase = [];
 let totalIncome = 0;
@@ -31,6 +38,39 @@ function getData() {
     dataBase = JSON.parse(storedData);
     dataTable(dataBase);
     updateTotal();
+  }
+}
+
+// Function for Login to the Application
+loginBtn.addEventListener("click", login);
+
+function login() {
+  welcomePage.style.display = "none";
+  app.style.display = "block";
+  app.style.top = "0";
+}
+
+// Function for Refresh the Application
+refreshBtn.addEventListener("click", refresh);
+
+function refresh() {
+  addData();
+  getData();
+  dataTable(dataBase);
+  updateTotal();
+  resetEntry();
+  setTimeout(refreshAlert, 300);
+}
+
+// Function for Exit the Application
+exitBtn.addEventListener("click", exit);
+
+function exit() {
+  if (confirm("Are you Sure Want to Exit the Application ?")) {
+    app.style.display = "none";
+    welcomePage.style.display = "block";
+  } else {
+    return;
   }
 }
 
@@ -182,6 +222,11 @@ function deleteAlert() {
   alert("The Transaction has Been Deleted Successfully !");
 }
 
+// Function to Show App Refresh Alert Message
+function refreshAlert() {
+  alert("All the Data are upto date !");
+}
+
 // Getting Total Income, Expense & Net Balance Values
 function updateTotal() {
   totalIncome = dataBase
@@ -197,6 +242,8 @@ function updateTotal() {
   netBalance = totalIncome - totalExpense;
   headerBalance.textContent = `₹ ${netBalance.toFixed(2)}`;
   formDashboardBalance.textContent = `₹ ${netBalance.toFixed(2)}`;
+
+  totalRecords.textContent = dataBase.length;
 }
 
 // Function to Reset the Entry Form after Clicking the Reset Button
@@ -222,3 +269,8 @@ applyFilterBtn.addEventListener("click", () => {
 
 // Loading Data
 document.addEventListener("DOMContentLoaded", getData);
+
+window.addEventListener("beforeunload", () => {
+  event.preventDefault();
+  event.returnValue = "";
+});
