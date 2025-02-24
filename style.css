@@ -12,7 +12,7 @@
   --dark-green: #059212;
   --green: #06d001;
   --white: #ffffff;
-  --purple: #f5004f;
+  --purple: #dc0083;
 }
 
 ::-webkit-scrollbar {
@@ -181,22 +181,52 @@ button {
   }
 
   .welcome-info h1 {
-    font-size: 3.5rem;
-    width: 500px;
+    font-size: 2.125rem;
     text-align: left;
   }
 
   .welcome-info p {
-    width: 450px;
     text-align: left;
   }
 
   .welcome-info span {
-    font-size: 3.75rem;
+    font-size: 2.5rem;
   }
 
   .login-wrapper {
     margin-top: 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  .welcome-info h1 {
+    font-size: 3.5rem;
+    width: 500px;
+  }
+
+  .welcome-info p {
+    width: 450px;
+  }
+
+  .welcome-info span {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .welcome-info h1 {
+    font-size: 4rem;
+    width: 600px;
+    margin-left: 2em;
+  }
+
+  .welcome-info p {
+    width: 500px;
+    font-size: 1.125rem;
+    margin-left: 7.5em;
+  }
+
+  .welcome-info span {
+    font-size: 4.25rem;
   }
 }
 
@@ -222,6 +252,10 @@ button {
   font-weight: 600;
 }
 
+.user-info span {
+  color: var(--yellow);
+}
+
 .user-info p {
   font-size: 0.75rem;
   font-weight: 400;
@@ -236,7 +270,7 @@ button {
 #exitBtn {
   border: none;
   background-color: transparent;
-  border: 1px solid var(--dark-red);
+  border: 1.5px solid var(--dark-red);
   border-radius: 20px;
   padding: 0.1em 0.8em;
   color: var(--dark-red);
@@ -269,6 +303,7 @@ button {
 #headerBalance {
   font-size: 1.25rem;
   font-weight: 600;
+  color: var(--yellow);
 }
 
 @media screen and (min-width: 480px) {
@@ -426,6 +461,7 @@ button {
   text-align: center;
   font-size: 1.25rem;
   font-weight: 600;
+  color: var(--yellow);
 }
 .form-entry input {
   background-color: var(--white);
@@ -501,6 +537,7 @@ button {
 .filter span {
   font-size: 1.25rem;
   font-weight: 500;
+  color: var(--yellow);
 }
 
 .filter-btns {
@@ -541,7 +578,7 @@ th {
   color: var(--text-color);
   font-weight: 500;
   position: sticky;
-  top: 0;
+  top: -2px;
   border: 1px solid var(--white);
 }
 

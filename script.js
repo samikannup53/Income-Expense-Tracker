@@ -14,6 +14,7 @@ let applyFilterBtn = document.getElementById("applyFilterBtn");
 let totalIncomeDisplay = document.getElementById("totalIncomeDisplay");
 let formDashboardBalance = document.getElementById("formDashboardBalance");
 let totalRecords = document.getElementById("totalRecords");
+let allFilter = document.getElementById("allFilter");
 
 let app = document.getElementById("app");
 let welcomePage = document.getElementById("welcome-page");
@@ -48,12 +49,24 @@ function login() {
   welcomePage.style.display = "none";
   app.style.display = "block";
   app.style.top = "0";
+
+  applyFilter();
 }
 
 // Function for Refresh the Application
 refreshBtn.addEventListener("click", refresh);
 
 function refresh() {
+  login();
+
+  isEditing = false;
+  editIndex = -1;
+  addButton.innerHTML = `Add &nbsp;<i class="fa-solid fa-plus"></i>`;
+  resetButton.style.display = "block";
+
+  allFilter.checked = true;
+  applyFilter();
+
   addData();
   getData();
   dataTable(dataBase);
@@ -108,7 +121,8 @@ function addTransaction() {
     dataBase[editIndex] = { catagory, discription, amount, entryDate };
     isEditing = false;
     editIndex = -1;
-    addButton.textContent = "Add";
+    addButton.innerHTML = `Add &nbsp;<i class="fa-solid fa-plus"></i>`;
+    resetButton.style.display = "block";
     addData();
     updateTotal();
     resetEntry();
@@ -197,7 +211,8 @@ function dataTable(filteredData) {
         discriptionInput.value = data.discription;
         isEditing = true;
         editIndex = index;
-        addButton.textContent = "Update";
+        addButton.innerHTML = `Update &nbsp;<i class="fa-solid fa-pen-to-square"></i>`;
+        resetButton.style.display = "none";
       } else {
         return;
       }
@@ -257,15 +272,18 @@ function resetEntry() {
 }
 
 // Function for Applying Filters after Clicking the Apply Button above the Data Table
-applyFilterBtn.addEventListener("click", () => {
+applyFilterBtn.addEventListener("click", applyFilter);
+
+function applyFilter() {
   const selectedData = document.querySelector(
     'input[name="filter"]:checked'
   ).value;
   const filteredData = dataBase.filter(
     (data) => selectedData === "all" || data.catagory === selectedData
   );
+  totalRecords.textContent = filteredData.length;
   dataTable(filteredData);
-});
+}
 
 // Loading Data
 document.addEventListener("DOMContentLoaded", getData);

@@ -15,8 +15,10 @@
     />
   </head>
   <body>
+    <!-- Login Page -->
     <section id="welcome-page">
       <div class="welcome-page-container">
+        <!-- Welcome Information Part -->
         <div class="welcome-info">
           <h1>
             Get Started with our financial<span> inEx</span> Tech Software
@@ -28,6 +30,7 @@
             to record your income and expenses.
           </p>
         </div>
+        <!-- Login Box Part -->
         <div class="login-info">
           <div class="login-wrapper">
             <h3>Welcome !</h3>
@@ -46,15 +49,18 @@
       </div>
     </section>
 
+    <!-- Application -->
     <section id="app">
+      <!-- App Header -->
       <div class="header">
         <div class="user-info">
-          <h3>inEx Tech</h3>
+          <h3><span>inEx</span> Tech</h3>
           <p>Income & Expense Tracker</p>
         </div>
         <div class="header-balance-nav">
           <div class="header-balance">
             <p>Net Balance :</p>
+            <span><i class="fa-solid fa-wallet"></i></span>
             <span id="headerBalance">₹ 0.00</span>
           </div>
           <button id="refreshBtn">
@@ -65,9 +71,10 @@
           </button>
         </div>
       </div>
-
+      <!-- Application Main Section -->
       <div class="main">
         <div class="form">
+          <!-- Left Side Dashboard Section -->
           <div class="form-dashboard">
             <h3>Balance</h3>
             <h1 id="formDashboardBalance">₹ 0.00</h1>
@@ -82,9 +89,9 @@
               </div>
             </div>
           </div>
-
+          <!-- Entry Form Secton -->
           <div class="form-entry">
-            <h4>Entry Form</h4>
+            <h4>Entry Form &nbsp;<i class="fa-solid fa-file-pen"></i></h4>
             <div class="date-catagory">
               <div class="catagory">
                 <label for="catagoryInput">Catagory :</label>
@@ -108,12 +115,16 @@
             <input type="text" id="discriptionInput" />
 
             <div class="form-btn">
-              <button class="btn" id="addButton">Add</button>
-              <button class="btn" id="resetButton">Reset</button>
+              <button class="btn" id="addButton">
+                Add &nbsp;<i class="fa-solid fa-plus"></i>
+              </button>
+              <button class="btn" id="resetButton">
+                Reset &nbsp; <i class="fa-solid fa-rotate-right"></i>
+              </button>
             </div>
           </div>
         </div>
-
+        <!-- Data Table Overview Section -->
         <div class="overview">
           <div class="filter">
             <span>Filter :</span>
@@ -141,11 +152,11 @@
               />
               <label for="expenseFilter">Expense</label>
               <button class="apply-filter-btn" id="applyFilterBtn">
-                Apply
+                Search &nbsp;<i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </div>
           </div>
-
+          <!-- Data Table -->
           <div class="data-table">
             <table class="table">
               <thead>
